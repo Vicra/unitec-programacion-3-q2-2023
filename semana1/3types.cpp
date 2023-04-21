@@ -10,6 +10,10 @@ int main(int argc, char const *argv[])
   cout << std::boolalpha;   
   cout << false << "\n";
 
+  // 1 bytes
+  char nineValue = '9';
+  cout << "nineValue: " << nineValue << endl;
+
   char cValue = 'g';
   cout << cValue << endl;
   cout << "bool: " << sizeof(bool) << endl;
