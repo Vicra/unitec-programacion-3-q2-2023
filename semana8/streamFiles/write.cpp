@@ -12,7 +12,6 @@ int main(int argc, char const *argv[])
   o << "texto ejemplo1";
   o << "texto ejemplo1";
 
-
   // paso 3: cerrar el archivo
   o.close();
   return 0;
