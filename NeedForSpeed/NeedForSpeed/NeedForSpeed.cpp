@@ -36,10 +36,12 @@ int main()
     std::vector<Auto>cars;
     while (true) {
         // menu
+        bool exit = false;
         int input;
         std::cout << "Menu: " << std::endl;
         std::cout << "1 agregar auto: " << std::endl;
         std::cout << "2 modificar auto: " << std::endl;
+        std::cout << "3 salir: " << std::endl;
         std::cin >> input;
         switch (input)
         {
@@ -49,15 +51,15 @@ int main()
         case 2:
             modificarAuto(cars);
             break;
+        case 3:
+            exit = true;
+            break;
         default:
             break;
         }
 
-        
-        int inputSalida;
-        std::cout << "Quieres Salir? Presiona 1: ";
-        std::cin >> inputSalida;
-        if (inputSalida == 1)
+        if(exit){
             break;
+        }
     }
 }
