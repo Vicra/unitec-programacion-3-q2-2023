@@ -75,7 +75,10 @@ class List {
     while(current != nullptr) {
       next = current->next;
       current->next = prev;
+      prev = current;
+      current = next;
     }
+    return prev;
   }
 };
 
@@ -85,29 +88,34 @@ int main(int argc, char const *argv[])
   swap(a,b);
   // std::cout << a << " " << b;
   
-  List<int>l;
-  l.head = new Node<int>(2);
-  l.insert(1);
-  l.insert(3);
-  l.insert(5);
-  l.print();
-  int deletedValue1 = l.deleteValue(2);
+  List<int>* l = new List<int>();
+  l->head = new Node<int>(2);
+  l->insert(1);
+  l->insert(3);
+  l->insert(5);
+  l->print();
+  int deletedValue1 = l->deleteValue(2);
   if(deletedValue1 != -1) {
     std::cout << "deleted: " << deletedValue1 << std::endl;
   }
-  l.print();
-  int deletedValue2 = l.deleteValue(5);
+  l->print();
+  int deletedValue2 = l->deleteValue(5);
   if(deletedValue2 != -1) {
     std::cout << "deleted: " << deletedValue2 << std::endl;
   }
-  l.print();
-  l.insert(7);
-  l.print();
+  l->print();
+  l->insert(7);
+  l->print();
   
-  int deletedValue3 = l.deleteValue(3);
+  int deletedValue3 = l->deleteValue(3);
   if(deletedValue3 != -1) {
     std::cout << "deleted: " << deletedValue3 << std::endl;
   }
-  l.print();
+  l->insert(11);
+  l->insert(14);
+  l->insert(22);
+  l->print();
+  l->head = l->reverse();
+  l->print();
   return 0;
 }
