@@ -1,0 +1,4 @@
+nombre edad
+leo 20
+messi 10
+cr7 30
