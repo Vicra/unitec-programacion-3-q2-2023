@@ -10,13 +10,13 @@ void insertSort(int *datos, int n){
   for (int i = 0; i < n; i++)
   {
     temporal = datos[i];
-    int nuevaPosicion = i;
+    int predecesor = i;
 
-    while ((nuevaPosicion > 0) && datos [nuevaPosicion-1] > temporal) {
-      datos[nuevaPosicion] = datos[nuevaPosicion - 1];
-      nuevaPosicion--;
+    while ((predecesor > 0) && datos [predecesor-1] > temporal) {
+      datos[predecesor] = datos[predecesor - 1];
+      predecesor--;
     }
-    datos[nuevaPosicion] = temporal;
+    datos[predecesor] = temporal;
   } 
 }
 
