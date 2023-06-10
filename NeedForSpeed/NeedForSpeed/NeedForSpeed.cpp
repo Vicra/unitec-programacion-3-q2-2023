@@ -27,9 +27,10 @@ void agregarAuto(std::vector<Auto> &cars) {
 
 void modificarAuto(std::vector<Auto>cars) {
     std::cout << "Mycars:" << std::endl;
-    for (auto car : cars) {
-        std::cout << "Car: " << car.marca << " model: " << car.modelo;
+    for (auto car, i : cars) {
+        std::cout << "Car: " << car.marca << " model: " << car.modelo << std::endl; 
     }
+
 }
 int main()
 {   
@@ -58,7 +59,15 @@ int main()
             break;
         }
 
+<<<<<<< HEAD
+        
+        int inputSalida;
+        std::cout << "Quieres Salir? Presiona 2, Continuar 1: ";
+        std::cin >> inputSalida;
+        if (inputSalida == 2)
+=======
         if(exit){
+>>>>>>> 21f6c1db9997b083b28c715ec1ebe04f26f0f9bd
             break;
         }
     }
