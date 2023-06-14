@@ -7,9 +7,12 @@ using std::vector;
 using std::next;
 
 int deleteElementByKey(vector<int>&datos, int key) {
-    for (vector<int>::const_reverse_iterator it = datos.rbegin(); it != datos.rend(); ++it) {
-        if (*it == key) {
-            datos.erase(next(it).base());
+    for (
+        auto it = datos.rbegin(); 
+        it != datos.rend(); 
+        ++it) {
+        if (*it == key) {   
+            datos.erase((++it).base());
             return key;
         }
     }
@@ -32,7 +35,7 @@ int main() {
     datos.push_back(1);
 
     print(datos);
-    int deleted = deleteElementByKey(datos, 2);
+    int deleted = deleteElementByKey(datos, 1);
     if (deleted == -1)
         cout << "Unable to delete." << endl; 
     else
